@@ -21,4 +21,18 @@ Each region of interest may contain text or a tick. The tick is identified by ta
 
 The model is trained on the [Kaggle A-Z dataset](https://www.kaggle.com/sachinpatel21/az-handwritten-alphabets-in-csv-format) and the MNIST digits dataset. The model expects the input image to be of shape `(None, 32, 32, 1)`, so in this section the regions of interest are padded and appropriately thresholded to work with the RESNET model. The model was trained using the notebook `Handwritten_Text_Recognition_Model_Training.ipynb`.
 
-The results of the **text** and **tick** recognition are stored in respective dictionaries and then printed as follows - 
+The results of the **tick** recognition are - <br>
+<image src = "Images/ticks_dict.PNG"></image>
+
+The results of the **text** recognition are - <br>
+<image src = "Images/text_dict.PNG"></image>
+
+# Future Scope
+- The above results are for the **PROPOSER DETAILS** section on page 1 of the form. The same process needs to be followed for all the other sections of the form.
+- Next, a language model needs to be built to make sure that the results are meaningful. For eg, the model must classify **INDIA** text as `INDIA` and not `1ND1A`.
+- A more robust bounding box detection algorithm needs to be implemented as this approach required a lot of manual tuning which was not worth the results obtained.
+
+# References
+- [[1](https://www.pyimagesearch.com/)] OpenCV and OCR blogs on PyImageSearch
+- [[2](https://www.youtube.com/user/Mhproductionhouse)] Youtube Channel: Murtaza's Workshop - Robotics and AI
+- [[3](https://www.youtube.com/user/ProgrammingKnowledge)] Youtube Channel: ProgrammingKnowledge 
